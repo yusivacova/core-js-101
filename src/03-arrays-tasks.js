@@ -300,23 +300,15 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-  const copy = [];
+  const newArr = arr.map((item, index) => {
+    const counter = index + 1;
+    const elem = new Array(counter).fill(item);
 
-  let newArr = arr.map((item, index) => {
-    let counter = index + 1;
-
-    while (counter) {
-      copy.push(item);
-      counter -= 1;
-    }
-    return item;
+    return elem;
   });
 
-  newArr = copy;
-
-  return newArr;
+  return newArr.flat();
 }
-console.log(propagateItemsByPositionIndex(['a', 'b']));
 
 /**
  * Returns the 3 largest numbers from the specified array
