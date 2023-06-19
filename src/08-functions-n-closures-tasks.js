@@ -60,10 +60,8 @@ function getPowerFunction(exponent) {
  *   getPolynom()      => null
  */
 function getPolynom(...args) {
-  // console.log(args);
   return (x) => {
     let y = 0;
-    // console.log(x);
     if (!args.length) return null;
     if (args.length === 1) [y] = args;
 
